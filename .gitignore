@@ -1,0 +1,7 @@
+*.png
+*.jpg
+*.xml
+*.log
+*.html
+.venv
+.vscode
