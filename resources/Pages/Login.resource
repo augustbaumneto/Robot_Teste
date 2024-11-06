@@ -13,11 +13,11 @@ Resource    Main.resource
 *** Keywords ***
 form de login carregou
     click icone usuario
-    Wait Until Element Is Visible     ${Login.loginForm}    10
-    Wait Until Element Is Enabled    ${Login.usernameField}    10
-    Wait Until Element Is Enabled    ${Login.passwordField}    10
-    Wait Until Element Is Visible    ${Login.usernameField}    10
-    Wait Until Element Is Visible    ${Login.passwordField}    10
+    Wait Until Element Is Visible     ${Login.loginForm}    
+    Wait Until Element Is Enabled    ${Login.usernameField}    
+    Wait Until Element Is Enabled    ${Login.passwordField}    
+    Wait Until Element Is Visible    ${Login.usernameField}    
+    Wait Until Element Is Visible    ${Login.passwordField}    
     Element Should Be Enabled    ${Login.usernameField}
     Element Should Be Enabled    ${Login.passwordField}    
     Element Should Be Visible    ${Login.usernameField}    
@@ -32,8 +32,8 @@ preencher password
     Input Text   ${Login.passwordField}    ${PASSWORD}
 
 click botao login
-    Wait Until Element Is Enabled    ${Login.loginButton}    10
-    Wait Until Element Is Visible    ${Login.loginButton}    10
+    Wait Until Element Is Enabled    ${Login.loginButton}    
+    Wait Until Element Is Visible    ${Login.loginButton}    
     Element Should Be Enabled    ${Login.loginButton}
     Wait Until Keyword Succeeds    15    1    Click Element    ${Login.loginButton}
 

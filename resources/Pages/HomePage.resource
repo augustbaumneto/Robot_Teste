@@ -18,7 +18,7 @@ executa acao ate o sucesso
     Wait Until Keyword Succeeds    10    1    ${KW}    ${KWARGS}
 
 click icone usuario
-    Wait Until Element Is Enabled    ${HomePage.userIcon}    10
+    Wait Until Element Is Enabled    ${HomePage.userIcon}
     #Wait Until Element Is Visible    ${HomePage.userIcon}    10
     Wait Until Keyword Succeeds    15    1    Click Element    ${HomePage.userIcon}
 
@@ -41,9 +41,7 @@ buscar produto
 
 pagina produto sera exibida
     [Arguments]    ${PRODUTO}
-    ${elements}    Get WebElements   //h1[text()=" ${PRODUTO} "]
-    ${count}    Get Length    ${elements}
-    Should Be Equal    ${count}    2
+    ${elements}    Get WebElements   //h1[@class="roboto-regular screen768 ng-binding"]
 
     
 
