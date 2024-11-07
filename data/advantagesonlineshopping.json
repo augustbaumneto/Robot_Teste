@@ -1,6 +1,9 @@
 {
     "ulr": "https://advantageonlineshopping.com/#/",
-    "browser": "ff",
+    "browser": "gc",
+    "siteUserName": "admin",
+    "sitePassword": "adm1n",
+    "safepayPassword": "Adm1n",
     "shortDelay": 1000,
     "longDelay": 10000
 }
