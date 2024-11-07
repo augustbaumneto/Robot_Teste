@@ -11,6 +11,7 @@ Resource    Main.resource
 ...    inputSearchField=//input[@placeholder="Search AdvantageOnlineShopping.com"]
 ...    speakerLink=//div[@id="speakersImg"]
 ...    logOutLink=//label[@ng-click="signOut($event)"]
+...    shoppingCartIcon=//a[@id="shoppingCartLink"]/span[@class="cart ng-binding"]
 
 *** Keywords ***
 executa acao ate o sucesso    
@@ -19,8 +20,11 @@ executa acao ate o sucesso
 
 click icone usuario
     Wait Until Element Is Enabled    ${HomePage.userIcon}
-    #Wait Until Element Is Visible    ${HomePage.userIcon}    10
-    Wait Until Keyword Succeeds    15    1    Click Element    ${HomePage.userIcon}
+    Wait Until Keyword Succeeds    10    1    Click Element    ${HomePage.userIcon}
+
+click icone carrinho
+    Wait Until Element Is Enabled    ${HomePage.shoppingCartIcon}
+    Wait Until Keyword Succeeds    10    1    Click Element    ${HomePage.shoppingCartIcon}
 
 click em Logout
     click icone usuario
@@ -31,17 +35,11 @@ sou desconectado do site
     Wait Until Element Is Enabled    ${HomePage.userIcon}
 
 expandir barra de busca
-    Wait Until Keyword Succeeds    30    1    Click Element     ${HomePage.searchButton}
+    Wait Until Keyword Succeeds    10    1    Click Element     ${HomePage.searchButton}
 
 buscar produto
     [Arguments]    ${PRODUTO}
     Input Text     ${HomePage.inputSearchField}    ${PRODUTO}
     Wait Until Element Is Visible    //p[text()="${PRODUTO}"]
-    Wait Until Keyword Succeeds    15    1    Click Element    //p[text()="${PRODUTO}"]
-
-pagina produto sera exibida
-    [Arguments]    ${PRODUTO}
-    ${elements}    Get WebElements   //h1[@class="roboto-regular screen768 ng-binding"]
-
-    
+    Wait Until Keyword Succeeds    10    1    Click Element    //p[text()="${PRODUTO}"]
 
