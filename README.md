@@ -1,2 +1,4 @@
 # project-advantageonlineshopping
-Testes Automatizados do site advantageonlineshopping.com
+Desafio-Inmetrics
+
+pip install robotframework-requests
