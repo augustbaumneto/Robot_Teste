@@ -47,8 +47,6 @@ estou logado
     preencher password    ${PASSWORD}
     click botao login
     usuario logado com sucesso
-
-deslogar com sucesso
     
 
     
