@@ -1,4 +1,4 @@
-# project-advantageonlineshopping
+
 # Desafio Inmetrics
 
 ## Testes Automatizados de UI
@@ -56,60 +56,75 @@ python -m venv .venv
 .venv\Scripts\activate.bat
 pip install robotframework
 robot --version
+```
 
 Para desativar o ambiente virtual, execute:
 
+```bash
 .venv\Scripts\deactivate.bat
+```
 
-Instalação das Bibliotecas
+### Instalação das Bibliotecas
 
-    Instalação do SeleniumLibrary
+1. **Instalação do SeleniumLibrary**
+   ```bash
+   pip install robotframework-seleniumlibrary
+   ```
 
-pip install robotframework-seleniumlibrary
+2. **Instalação do robotframework-jsonlibrary**
+   ```bash
+   pip install robotframework-jsonlibrary
+   ```
 
-Instalação do robotframework-jsonlibrary
+3. **Instalação da biblioteca para recursos de API (Requests)**
+   ```bash
+   pip install robotframework-requests
+   ```
 
-pip install robotframework-jsonlibrary
+---
 
-Instalação da biblioteca para recursos de API (Requests)
+## Configuração do SeleniumLibrary
 
-    pip install robotframework-requests
+O **SeleniumLibrary** é uma ferramenta de automação para web, desktop, API, etc. Para automação web, devemos configurar o webdriver, que fará a integração entre o Robot Framework e os navegadores.
 
-Configuração do SeleniumLibrary
+- Se você utiliza o **Google Chrome**, verifique a versão do navegador e baixe a versão correspondente do Chrome Driver em [chrome-for-testing](https://googlechromelabs.github.io/chrome-for-testing/).
+- Após o download, descompacte e copie o arquivo `chromedriver.exe` para o diretório `Scripts` do seu ambiente virtual. Exemplo:
+  ```plaintext
+  <diretorio_projeto>\.venv\Scripts\chromedriver.exe
+  ```
 
-O SeleniumLibrary é uma ferramenta de automação para web, desktop, API, etc. Para automação web, devemos configurar o webdriver, que fará a integração entre o Robot Framework e os navegadores.
+---
 
-    Se você utiliza o Google Chrome, verifique a versão do navegador e baixe a versão correspondente do Chrome Driver em chrome-for-testing.
-    Após o download, descompacte e copie o arquivo chromedriver.exe para o diretório Scripts do seu ambiente virtual. Exemplo:
-
-    <diretorio_projeto>\.venv\Scripts\chromedriver.exe
-
-Estrutura de Diretórios
+## Estrutura de Diretórios
 
 A estrutura de diretórios adotada organiza os arquivos de recursos e suítes de testes da seguinte forma:
 
-    Recursos de páginas web e API:
+- Recursos de páginas web e API:
+  ```plaintext
+  <diretorio_projeto>\resources\Pages\
+  <diretorio_projeto>\resources\API\
+  ```
 
-<diretorio_projeto>\resources\Pages\
-<diretorio_projeto>\resources\API\
+- Suítes de testes:
+  ```plaintext
+  <diretorio_projeto>\tests\Pages\WEB
+  <diretorio_projeto>\tests\Pages\API
+  ```
 
-Suítes de testes:
+---
 
-    <diretorio_projeto>\tests\Pages\WEB
-    <diretorio_projeto>\tests\Pages\API
+## Padrão de Projeto Utilizado
 
-Padrão de Projeto Utilizado
+Utilizamos uma implementação simplificada do padrão **Page Object Model (POM)** para manter o projeto com código reutilizável e de fácil manutenção futura.
 
-Utilizamos uma implementação simplificada do padrão Page Object Model (POM) para manter o projeto com código reutilizável e de fácil manutenção futura.
+- Todos os elementos de tela foram capturados e escritos no formato **XPATH**.
 
-    Todos os elementos de tela foram capturados e escritos no formato XPATH.
+---
 
-Configuração do .gitignore
+## Configuração do `.gitignore`
 
-Certifique-se de configurar seu .gitignore para evitar o envio de arquivos desnecessários para o repositório.
+Certifique-se de configurar seu `.gitignore` para evitar o envio de arquivos desnecessários para o repositório.
 
-Por enquanto é isso!
+---
 
-
-Este arquivo README.md fornece uma introdução clara ao projeto, explicando os objetivos, o sistema de teste, as dependências, a configuração do ambiente e a estrutura dos diretórios.
-
+**Por enquanto é isso!**
