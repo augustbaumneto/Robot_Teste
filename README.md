@@ -118,6 +118,8 @@ A estrutura de diretórios adotada organiza os arquivos de recursos e suítes de
 Utilizamos uma implementação simplificada do padrão **Page Object Model (POM)** para manter o projeto com código reutilizável e de fácil manutenção futura.
 
 - Todos os elementos de tela foram capturados e escritos no formato **XPATH**.
+- Os testes foram planejados e desenvolvidos evitando dependênci entre si, assim habilitados para execuções 
+  paralelas em pipeline no futuro.
 
 ---
 
