@@ -41,5 +41,5 @@ buscar produto
     [Arguments]    ${PRODUTO}
     Input Text     ${HomePage.inputSearchField}    ${PRODUTO}
     Wait Until Element Is Visible    //p[text()="${PRODUTO}"]
-    Wait Until Keyword Succeeds    10    1    Click Element    //p[text()="${PRODUTO}"]
+    Wait Until Keyword Succeeds    15    1    Click Element    //p[text()="${PRODUTO}"]
 

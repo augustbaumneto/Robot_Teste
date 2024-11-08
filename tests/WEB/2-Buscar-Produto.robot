@@ -9,7 +9,8 @@ Library    ../.venv/Lib/site-packages/robot/libraries/OperatingSystem.py
 Library    ../.venv/Lib/site-packages/robot/libraries/String.py
 
 *** Variables ***
-
+${username}    admin
+${password}    Adm1n
 
 *** Test Cases ***
 CT1 - Buscar produto
@@ -29,8 +30,8 @@ CT2 - Buscar produto e finalizar a compra
 
     ${PRODUTO}    Convert To String    HP ROAR WIRELESS SPEAKER
     ${METODO_PAGAMENTO}    Convert To String    safepay
-    ${USERNAME}    Convert To String    admin
-    ${PASSWORD}    Convert To String    Adm1n
+    ${USERNAME}    Convert To String    ${username}
+    ${PASSWORD}    Convert To String    ${password}
     ${QUANTIDADE_PRODUTO_ADDICIONADO}    Convert To String    1
     Given adicionei 1 produto no carrinho de compras    ${PRODUTO}    ${QUANTIDADE_PRODUTO_ADDICIONADO}
     And click botao checkout
