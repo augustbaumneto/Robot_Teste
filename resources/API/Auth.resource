@@ -32,7 +32,6 @@ gerar token
     ${token}    Get Value From Json    ${resp.json()}    $..statusMessage.token
     ${user_id}     Get Value From Json    ${resp.json()}    $..statusMessage.userId
     Status Should Be    200    ${resp}
-    #Set Suite Variable    ${token}
     &{headers}         Create Dictionary       Authorization=${token}[0]    Content-Type=application/json
     Set Suite Variable    ${headers}
     Set Suite Variable    ${user_id}
@@ -50,11 +49,7 @@ seleciona produto aleatorio
     request buscar todos produtos
     response retornou 200 OK
     ${listaprodutos}    Get Value From Json    ${resp.json()}    $..products
-
     ${len}    Get Length    ${listaprodutos}[0]
-    Log    ${len}
- 
-    #${item}    ${listaprodutos}
     Set Suite Variable    ${listaprodutos}
 
 request buscar produto por nome
@@ -75,9 +70,7 @@ request atualizar imagem do produto
     [Arguments]    ${COR}
     ${id}    Convert To Integer    ${user_id}[0]
     ${arquivo}    Create Dictionary    file=@${CAMINHO_ARQUIVO}
-    #&{headers}         Create Dictionary       Authorization=${token}[0]    Content-Type=application/json
-    criar sessao em /catalog    
-    #${resp}    POST On Session    catalog    /api/v1/product/image/${id}/${categoryId}    params=product_id=${productId}    files=${arquivo} 
+    criar sessao em /catalog
     ${resp}    POST On Session    catalog    /api/v1/product/image/${id}/1/${COR}    params=product_id=${productId}    headers=${headers}    files=${arquivo}    expected_status=anything
     Set Suite Variable    ${resp}
 
