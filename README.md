@@ -36,12 +36,9 @@ A instalação dos pacotes foi realizada em um ambiente virtual Python para segr
 No diretório do seu projeto, execute os seguintes comandos:
 
 ```bash
-cd C:\projects
-mkdir MyProject
-cd MyProject
 python -m venv .venv
 .venv\Scripts\activate.bat
-pip install robotframework
+pip install -r requirements
 robot --version
 ```
 
